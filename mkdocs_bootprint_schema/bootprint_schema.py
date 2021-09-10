@@ -24,7 +24,7 @@ class BootprintSchema(BasePlugin):
     def on_files(self, files, config):
         # Add json files within included files/directories to list
         locations = []
-
+        script_path = os.path.dirname(os.path.realpath(__file__))
         for entry in self.config["include"]:
             if entry.endswith(".json"):
                 locations.append(entry)
@@ -49,7 +49,7 @@ class BootprintSchema(BasePlugin):
 
 
             ## Copy
-            shutil.copyfile(os.path.join(os.path.realpath(__file__), 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
+            shutil.copyfile(os.path.join(script_path, 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
             config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
 
             schema_list = []
@@ -79,7 +79,7 @@ class BootprintSchema(BasePlugin):
 
                         try:
 
-                            os.system(f'bootprint -f {os.path.join(os.path.realpath(__file__), "bootprint/config.js")} json-schema {filepath} {self.config["tmp_folder"]}')
+                            os.system(f'bootprint -f {os.path.join(script_path, "bootprint/config.js")} json-schema {filepath} {self.config["tmp_folder"]}')
                             shutil.copyfile(os.path.join(self.config["tmp_folder"], 'index.md'), path)
 
                         except Exception:
