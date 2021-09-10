@@ -1,6 +1,6 @@
 # mkdocs bootprint Schema plugin
 
-This is a plugin that create html page from json schema using BootPrint tool..
+This is a plugin that create html page from json schema using BootPrint tool.
 
 
 **WIP**
