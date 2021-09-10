@@ -1,1 +1,1 @@
-recursive-include bootprint *
+recursive-include mkdocs_bootprint_schema/bootprint *

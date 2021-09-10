@@ -9,7 +9,7 @@ setup(
     version="0.0.1",
     description="A MkDocs plugin to ocnvert json schema files into html page using bootprint (out is MD page in order to permit mkdocs integration)",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    # content_type="text/markdown",
     keywords="mkdocs, schema, json, plugin",
     url="https://github.com/mysiki/mkdocs_bootprint_schema",
     author="mysiki",
@@ -20,6 +20,8 @@ setup(
     install_requires=["mkdocs>=1.0.4"],
     packages=find_packages(),
     include_package_data=True,
+    # package_data={'toto': ["bootprint/*"]},
+    # data_files=[('bootprint', ['bootprint/*'])],
     entry_points={
         "mkdocs.plugins": [
             "bootprint_schema = mkdocs_bootprint_schema.bootprint_schema:BootprintSchema"
