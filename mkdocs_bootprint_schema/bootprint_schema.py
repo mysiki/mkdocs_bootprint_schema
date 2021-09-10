@@ -39,7 +39,7 @@ class BootprintSchema(BasePlugin):
 
         if locations:
             ## Create all directory
-            mk_dir = os.path.join(config['docs_dir'],self.config['css_file_path'])
+            mk_dir = os.path.join(self.config['css_file_path'])
             if not os.path.isdir(mk_dir):
                 os.makedirs(mk_dir, exist_ok=True)
 
@@ -48,7 +48,7 @@ class BootprintSchema(BasePlugin):
 
 
             ## Copy
-            shutil.copyfile('./bootprint/bootprint.css', os.path.join(config['docs_dir'], self.config['css_file_path'], self.config['css_file_name']))
+            shutil.copyfile('./bootprint/bootprint.css', os.path.join(self.config['css_file_path'], self.config['css_file_name']))
 
             schema_list = []
 
