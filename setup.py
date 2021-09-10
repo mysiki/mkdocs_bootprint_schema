@@ -18,6 +18,7 @@ setup(
     python_requires=">=3.6",
     install_requires=["mkdocs>=1.0.4"],
     packages=find_packages(),
+    include_package_data=True,
     entry_points={
         "mkdocs.plugins": [
             "bootprint_schema = mkdocs_bootprint_schema.bootprint_schema:BootprintSchema"
