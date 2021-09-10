@@ -17,6 +17,7 @@ class BootprintSchema(BasePlugin):
         ("nav", config_options.Type(str, default="Schema")),
         ("tmp_folder", config_options.Type(str, default='/tmp/mkdocsBootprintSchemaTmp')),
         ("clean_tmp_folder", config_options.Type(bool, default=True)),
+        ("auto_nav", config_options.Type(bool, default=True)),
         ("show_example", config_options.Type(str, default='all'))
     )
 
