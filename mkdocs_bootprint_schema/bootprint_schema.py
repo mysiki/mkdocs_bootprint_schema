@@ -72,7 +72,7 @@ class BootprintSchema(BasePlugin):
                     schema_syntax = ["$schema", "$ref"]
 
                     if any(x in data for x in schema_syntax):
-                        path = os.path.join(config['docs_dir'],self.config['output'], file[:-5].md)
+                        path = os.path.join(config['docs_dir'],self.config['output'], f'{file[:-5].md}')
                         # write converted markdown file to this location
                         if not os.path.isdir(os.path.dirname(path)):
                             os.makedirs(os.path.dirname(path), exist_ok=True)
