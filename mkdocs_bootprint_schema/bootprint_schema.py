@@ -49,7 +49,7 @@ class BootprintSchema(BasePlugin):
 
 
             ## Copy
-            shutil.copyfile(os.path.join(script_path, 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
+            shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
             config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
 
             schema_list = []
@@ -79,7 +79,7 @@ class BootprintSchema(BasePlugin):
 
                         try:
 
-                            os.system(f'bootprint -f {os.path.join(script_path, "bootprint/config.js")} json-schema {filepath} {self.config["tmp_folder"]}')
+                            os.system(f'bootprint -f {os.path.join(script_path, "../", "bootprint/config.js")} json-schema {filepath} {self.config["tmp_folder"]}')
                             shutil.copyfile(os.path.join(self.config["tmp_folder"], 'index.md'), path)
 
                         except Exception:
