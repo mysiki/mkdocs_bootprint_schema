@@ -44,8 +44,8 @@ class BootprintSchema(BasePlugin):
             if not os.path.isdir(mk_dir):
                 os.makedirs(mk_dir, exist_ok=True)
 
-            if not os.path.isdir(config['tmp_folder']):
-                os.makedirs(config['tmp_folder'], exist_ok=True)
+            if not os.path.isdir(self.config['tmp_folder']):
+                os.makedirs(self.config['tmp_folder'], exist_ok=True)
 
 
             ## Copy
