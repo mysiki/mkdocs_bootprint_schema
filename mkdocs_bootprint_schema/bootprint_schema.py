@@ -50,7 +50,7 @@ class BootprintSchema(BasePlugin):
 
             ## Copy
             shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
-            config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
+            config['extra_css'].append(os.path.relpath(os.path.join(self.config['css_file_path'], self.config['css_file_name']), config['docs_dir']))
 
             schema_list = []
 
