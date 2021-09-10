@@ -11,8 +11,8 @@ class BootprintSchema(BasePlugin):
 
     config_scheme = (
         ("include", config_options.Type(list, default=[])),
-        ("css_file_path", config_options.Type(str, '_theme_overrides/assets/stylesheets')),
-        ("css_file_name", config_options.Type(str, 'bootprint.css')),
+        ("css_file_path", config_options.Type(str, default='_theme_overrides/assets/stylesheets')),
+        ("css_file_name", config_options.Type(str, default='bootprint.css')),
         ("output", config_options.Type(str, default="schema")),
         ("nav", config_options.Type(str, default="Schema")),
         ("tmp_folder", config_options.Type(str, default='/tmp/mkdocsBootprintSchemaTmp')),
