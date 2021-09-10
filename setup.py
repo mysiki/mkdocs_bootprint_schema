@@ -15,6 +15,7 @@ setup(
     author="mysiki",
     author_email="hoaxboy@wanadoo.fr",
     license="MIT",
+    zip_safe=False,
     python_requires=">=3.6",
     install_requires=["mkdocs>=1.0.4"],
     packages=find_packages(),
