@@ -25,7 +25,7 @@ class BootprintSchema(BasePlugin):
         # Add json files within included files/directories to list
         locations = []
         script_path = os.path.dirname(os.path.realpath(__file__))
-        print(config)
+
         for entry in self.config["include"]:
             if entry.endswith(".json"):
                 locations.append(entry)
@@ -51,6 +51,7 @@ class BootprintSchema(BasePlugin):
 
             ## Copy
             # shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
+            print(f"Copie du CSS {os.path.join(script_path, '../', 'bootprint/bootprint.css')} dans {os.path.join(config['theme'].dirs[0], self.config['css_file_path'], self.config['css_file_name'])}")
             shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(config['theme'].dirs[0], self.config['css_file_path'], self.config['css_file_name']))
             if not os.path.join(self.config['css_file_path'], self.config['css_file_name']) in config['extra_css']:
                 config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
