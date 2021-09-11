@@ -52,7 +52,8 @@ class BootprintSchema(BasePlugin):
             ## Copy
             # shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(self.config['css_file_path'], self.config['css_file_name']))
             shutil.copyfile(os.path.join(script_path, '../', 'bootprint/bootprint.css'), os.path.join(config['theme'].dirs[0], self.config['css_file_path'], self.config['css_file_name']))
-            config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
+            if not os.path.join(self.config['css_file_path'], self.config['css_file_name']) in config['extra_css']:
+                config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
             # config['extra_css'].append(os.path.relpath(os.path.join(self.config['css_file_path'], self.config['css_file_name']), config['docs_dir']))
 
             if self.config['show_example']:
