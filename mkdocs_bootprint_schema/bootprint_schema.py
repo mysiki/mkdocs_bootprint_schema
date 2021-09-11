@@ -56,9 +56,9 @@ class BootprintSchema(BasePlugin):
             # config['extra_css'].append(os.path.relpath(os.path.join(self.config['css_file_path'], self.config['css_file_name']), config['docs_dir']))
 
             if self.config['show_example']:
-                bootprint_config = os.path.join(script_path, "../", "bootprint/config.js")
+                bootprint_config = os.path.join(script_path, "bootprint/config.js")
             else:
-                bootprint_config = os.path.join(script_path, "../", "bootprint/config_without_example.js")
+                bootprint_config = os.path.join(script_path, "bootprint/config_without_example.js")
 
             schema_list = []
 
