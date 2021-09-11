@@ -17,14 +17,14 @@ class BootprintSchema(BasePlugin):
         ("nav", config_options.Type(str, default="Schema")),
         ("tmp_folder", config_options.Type(str, default='/tmp/mkdocsBootprintSchemaTmp')),
         ("clean_tmp_folder", config_options.Type(bool, default=True)),
-        ("auto_nav", config_options.Type(bool, default=True)),
-        ("show_example", config_options.Type(str, default='all'))
+        ("auto_nav", config_options.Type(bool, default=True))
     )
 
     def on_files(self, files, config):
         # Add json files within included files/directories to list
         locations = []
         script_path = os.path.dirname(os.path.realpath(__file__))
+        print(config)
         for entry in self.config["include"]:
             if entry.endswith(".json"):
                 locations.append(entry)
@@ -108,5 +108,8 @@ class BootprintSchema(BasePlugin):
             # Add schemas to nav
             if self.config["auto_nav"]:
                 config["nav"].append(schema_dict)
+
+            if self.config['clean_tmp_folder']:
+                shutil.rmtree(self.config["tmp_folder"])
 
         return files
