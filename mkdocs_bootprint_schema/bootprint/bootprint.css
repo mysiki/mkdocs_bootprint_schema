@@ -1,7 +1,9 @@
 .panel {
     margin-bottom: 20px;
     /* background-color: #fff; */
-    border: 1px solid transparent;
+    background-color: var(--md-default-bg-color);
+    /* border: 1px solid transparent; */
+    border: .05rem solid var(--md-typeset-table-color);
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
@@ -615,7 +617,7 @@ a.json-property-discriminator:before:focus {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-    /* background-color: #777; */
+    background-color: #777;
     content: "required"
 }
 
@@ -683,7 +685,8 @@ a.json-property-read-only:before:focus {
 
 .json-property-type {
     font-style: italic;
-    font-weight: 100
+    font-weight: 100;
+    font-size: small;
 }
 
 .json-property-format {
@@ -719,5 +722,8 @@ a.json-property-read-only:before:focus {
 }
 
 .json-property-name {
-    font-weight: 500
+    font-weight: 500;
+    color: var(--md-code-fg-color);
+    background-color: var(--md-code-bg-color);
+    ;
 }
