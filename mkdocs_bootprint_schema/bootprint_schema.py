@@ -17,7 +17,8 @@ class BootprintSchema(BasePlugin):
         ("nav", config_options.Type(str, default="Schema")),
         ("tmp_folder", config_options.Type(str, default='/tmp/mkdocsBootprintSchemaTmp')),
         ("clean_tmp_folder", config_options.Type(bool, default=True)),
-        ("auto_nav", config_options.Type(bool, default=True))
+        ("auto_nav", config_options.Type(bool, default=True)),
+        ("show_example", config_options.Type(bool, default=True))
     )
 
     def on_files(self, files, config):
@@ -54,6 +55,11 @@ class BootprintSchema(BasePlugin):
             config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
             # config['extra_css'].append(os.path.relpath(os.path.join(self.config['css_file_path'], self.config['css_file_name']), config['docs_dir']))
 
+            if self.config['show_example']:
+                bootprint_config = os.path.join(script_path, "../", "bootprint/config.js")
+            else:
+                bootprint_config = os.path.join(script_path, "../", "bootprint/config_without_example.js")
+
             schema_list = []
 
             ## Path to Nav ##
@@ -81,7 +87,7 @@ class BootprintSchema(BasePlugin):
 
                         try:
 
-                            os.system(f'bootprint -f {os.path.join(script_path, "../", "bootprint/config.js")} json-schema {filepath} {self.config["tmp_folder"]}')
+                            os.system(f'bootprint -f {bootprint_config} json-schema {filepath} {self.config["tmp_folder"]}')
                             shutil.copyfile(os.path.join(self.config["tmp_folder"], 'index.md'), path)
 
                         except Exception:

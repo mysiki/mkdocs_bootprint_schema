@@ -18,14 +18,24 @@ plugins:
   - bootprint_schema
 ```
 
+Define a theme overwride varaible in order to save css into
+
+```yaml
+theme:
+  custom_dir: ./_theme_overrides
+```
+
 Then, specify folders and files that you want to include in `mkdocs.yml` relative to it's location, like so:
 ```yaml
 plugins:
   - search
   - bootprint_schema:
       include:
-        - "../JSONSchema/"
-        - "../example/directory/schema.json"
+        - "documentations/configuration/schemas/"
+      css_file_path: 'assets/stylesheets'
+        # ("css_file_name", config_options.Type(str, 'bootprint.css')),
+      output: "configuration/schemas/docs/bootprint_schema_all" ## From docs_dir
+      auto_nav: false
 ```
 
 Specified directories will be scanned for schema json files, so consider specifying individual files for expansive directories.
