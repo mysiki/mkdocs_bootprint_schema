@@ -450,6 +450,38 @@ h3.panel-title {
     /* font-weight: bold; */
     /* color: #555; */
     /* text-transform: uppercase; */
+    content: '“';
+    /* padding-bottom: .5em; */
+    /* display: block */
+}
+
+.json-schema-description:after {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
+    content: '”';
+    /* padding-bottom: .5em; */
+    /* display: block */
+}
+
+.json-schema-description p {
+    display: inline;
+}
+
+.json-schema-description {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
+    color: var(--md-code-hl-comment-color);
+    font-style: italic;
+    /* padding-bottom: .5em; */
+    /* display: block */
+}
+
+.json-schema-description:before {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
     /* content: "Description"; */
     /* padding-bottom: .5em; */
     /* display: block */
@@ -553,6 +585,15 @@ h3.panel-title {
 .json-inner-schema .json-schema-properties,
 .json-inner-schema .json-schema-array-items,
 .json-inner-schema .json-schema-description,
+.json-inner-schema .json-schema-example {
+    padding-left: 1em;
+    margin-top: .5em;
+    /* padding-bottom: .5em; */
+    border-left: 2px solid #a2a2a2
+}
+
+.json-inner-schema .json-schema-properties,
+.json-inner-schema .json-schema-array-items,
 .json-inner-schema .json-schema-example {
     padding-left: 1em;
     margin-top: .5em;
