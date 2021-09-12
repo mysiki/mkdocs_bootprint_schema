@@ -23,12 +23,9 @@
                 {{md description}}
                 {{!-- </details> --}}
                 {{!Show details of nested property schema}}
-                <details class="info">
                 <div class="json-inner-schema">
-                    <summary>Sub</summary>
                     {{>json-schema/body $ref="" description=""}}
                 </div>
-                </details>
             </dd>
         {{/each}}
     </dl>
