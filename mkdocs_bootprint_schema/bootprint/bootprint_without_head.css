@@ -622,6 +622,7 @@ a.json-property-discriminator:before:focus {
     vertical-align: baseline;
     border-radius: .25em;
     /* background-color: #777; */
+    color: var(--md-accent-fg-color);
     content: "required"
 }
 
@@ -731,6 +732,8 @@ a.json-property-read-only:before:focus {
     background-color: var(--md-code-bg-color);
 }
 
+
+/*
 .json-property-range {
     color: var(--md-accent-fg-color);
-}
+} */
