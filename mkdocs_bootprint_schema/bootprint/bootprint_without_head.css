@@ -450,7 +450,7 @@ h3.panel-title {
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    /* content: "Description"; */
+    content: "Description";
     /* padding-bottom: .5em; */
     display: block
 }
