@@ -447,12 +447,12 @@ h3.panel-title {
 /* Json Schema */
 
 .json-schema-description:before {
-    font-weight: bold;
+    /* font-weight: bold; */
     /* color: #555; */
-    text-transform: uppercase;
-    content: "Description";
+    /* text-transform: uppercase; */
+    /* content: "Description"; */
     /* padding-bottom: .5em; */
-    display: block
+    /* display: block */
 }
 
 .json-schema-description:not(:last-child) {

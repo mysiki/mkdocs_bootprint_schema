@@ -18,10 +18,13 @@
                 {{/if}}
             </dt>
             <dd class="json-schema-description">
+                <div class="admonition info">
+                    <p class="admonition-title">Description</p>
                 {{md description}}
                 {{!Show details of nested property schema}}
                 <div class="json-inner-schema">
                     {{>json-schema/body $ref="" description=""}}
+                </div>
                 </div>
             </dd>
         {{/each}}
