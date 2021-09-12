@@ -16,11 +16,14 @@
                 {{#if readOnly}}
                     <span class="json-property-read-only"></span>
                 {{/if}}
+                {{#if description}}
+                    <span class="json-schema-description">{{md description}}</span>
+                {{/if}}
             </dt>
-            <dd class="json-schema-description">
+            <dd>
                 {{!-- <details class="info"> --}}
                     {{!-- <summary>Description</summary> --}}
-                {{md description}}
+                {{!-- {{md description}} --}}
                 {{!-- </details> --}}
                 {{!Show details of nested property schema}}
                 <div class="json-inner-schema">
