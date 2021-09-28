@@ -1,0 +1,16 @@
+site_name: "Test include_dir_to_nav"
+repo_url: "https://github.com/mysiki/mkdocs_bootprint_schema"
+site_author: mysiki
+site_description: >-
+  Test page for validate plugin
+copyright: "MIT"
+
+plugins:
+  - search:
+  - bootprint_schema:
+      include:
+        - docs/JSON
+docs_dir: './docs'
+
+nav:
+  - Home: README.md

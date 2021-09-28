@@ -1,3 +1,7 @@
+h3.panel-title {
+    margin: 0;
+}
+
 .panel {
     margin-bottom: 20px;
     /* background-color: #fff; */
@@ -443,12 +447,44 @@
 /* Json Schema */
 
 .json-schema-description:before {
-    font-weight: bold;
+    /* font-weight: bold; */
     /* color: #555; */
-    text-transform: uppercase;
-    content: "Description";
+    /* text-transform: uppercase; */
+    content: '“';
     /* padding-bottom: .5em; */
-    display: block
+    /* display: block */
+}
+
+.json-schema-description:after {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
+    content: '”';
+    /* padding-bottom: .5em; */
+    /* display: block */
+}
+
+.json-schema-description p {
+    display: inline;
+}
+
+.json-schema-description {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
+    color: var(--md-code-hl-comment-color);
+    font-style: italic;
+    /* padding-bottom: .5em; */
+    /* display: block */
+}
+
+.json-schema-description:before {
+    /* font-weight: bold; */
+    /* color: #555; */
+    /* text-transform: uppercase; */
+    /* content: "Description"; */
+    /* padding-bottom: .5em; */
+    /* display: block */
 }
 
 .json-schema-description:not(:last-child) {
@@ -459,7 +495,7 @@
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    content: "Properties";
+    /* content: "Properties"; */
     /* padding-bottom: .5em; */
     display: block
 }
@@ -480,7 +516,7 @@
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    content: "Example";
+    /* content: "Example"; */
     /* padding-bottom: .5em; */
     display: block
 }
@@ -493,7 +529,7 @@
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    content: "Items";
+    /* content: "Items"; */
     /* padding-bottom: .5em; */
     display: block
 }
@@ -506,7 +542,7 @@
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    content: "Inherited";
+    /* content: "Inherited"; */
     /* padding-bottom: .5em; */
     display: block
 }
@@ -526,18 +562,18 @@
 }
 
 .json-schema-anyOf>dl dt:not(:first-child):before {
-    content: "or "
+    /* content: "or " */
 }
 
 .json-schema-anyOf>dl dt:first-child:before {
-    content: "either "
+    /* content: "either " */
 }
 
 .json-schema-additionalProperties:before {
     font-weight: bold;
     /* color: #555; */
     text-transform: uppercase;
-    content: "Additional properties";
+    /* content: "Additional properties"; */
     /* padding-bottom: .5em; */
     display: block
 }
@@ -556,6 +592,15 @@
     border-left: 2px solid #a2a2a2
 }
 
+.json-inner-schema .json-schema-properties,
+.json-inner-schema .json-schema-array-items,
+.json-inner-schema .json-schema-example {
+    padding-left: 1em;
+    margin-top: .5em;
+    /* padding-bottom: .5em; */
+    border-left: 2px solid #a2a2a2
+}
+
 .json-inner-schema dd {
     margin: .5em 0em .1em 1.875em
 }
@@ -563,7 +608,7 @@
 .json-schema--regex:before,
 .json-schema--regex:after {
     /* color: #808080; */
-    content: '/'
+    /* content: '/' */
 }
 
 .json-schema--reference {
@@ -582,7 +627,7 @@
     vertical-align: baseline;
     border-radius: .25em;
     /* background-color: #777; */
-    content: "discriminator"
+    /* content: "discriminator" */
 }
 
 a.json-property-discriminator:before:hover,
@@ -617,7 +662,8 @@ a.json-property-discriminator:before:focus {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-    background-color: #777;
+    /* background-color: #777; */
+    color: var(--md-accent-fg-color);
     content: "required"
 }
 
@@ -654,7 +700,7 @@ a.json-property-required:before:focus {
     vertical-align: baseline;
     border-radius: .25em;
     /* background-color: #777; */
-    content: "read only"
+    /* content: "read only" */
 }
 
 a.json-property-read-only:before:hover,
@@ -718,11 +764,17 @@ a.json-property-read-only:before:focus {
 
 .json-property-enum-item:before,
 .json-property-enum-item:after {
-    content: "\""
+    /* content: "\"" */
 }
 
 .json-property-name {
-    font-weight: 500;
+    font-weight: bold;
     color: var(--md-code-fg-color);
     background-color: var(--md-code-bg-color);
 }
+
+
+/*
+.json-property-range {
+    color: var(--md-accent-fg-color);
+} */
