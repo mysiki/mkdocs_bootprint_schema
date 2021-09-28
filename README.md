@@ -8,7 +8,7 @@ Install the plugin using pip and bootprint requirement:
 
 ```shell
 # Bootprint, inspired from official repo
-npm install -g bootprint \
+npm install -g bootprint
 npm install -g bootprint-json-schema
 
 # Mkdocs plugin
@@ -25,11 +25,18 @@ plugins:
         - Path_To_JSONSchema
 ```
 
-Define a theme overwride varaible in order to save css into
+It's recommended to define a theme overwride variable in order to save css into. Declare `custom_dir` and add this path in plugin option.
 
 ```yaml
 theme:
   custom_dir: ./_theme_overrides
+
+plugins:
+  - search
+  - bootprint_schema:
+      include:
+        - Path_To_JSONSchema
+      css_file_path: 'assets/stylesheets'
 ```
 
 Specified directories will be scanned for schema json files, so consider specifying individual files for expansive directories.

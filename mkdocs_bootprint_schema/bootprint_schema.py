@@ -11,7 +11,7 @@ class BootprintSchema(BasePlugin):
 
     config_scheme = (
         ("include", config_options.Type(list, default=[])),
-        ("css_file_path", config_options.Type(str, default='_theme_overrides/assets/stylesheets')),
+        ("css_file_path", config_options.Type(str, default='css')),
         ("css_file_name", config_options.Type(str, default='bootprint.css')),
         ("output", config_options.Type(str, default="schema")),
         ("nav", config_options.Type(str, default="Schema")),
@@ -41,7 +41,7 @@ class BootprintSchema(BasePlugin):
 
         if locations:
             ## Create all directory
-            mk_dir = os.path.join(self.config['css_file_path'])
+            mk_dir = os.path.join(config['theme'].dirs[0], self.config['css_file_path'])
             if not os.path.isdir(mk_dir):
                 os.makedirs(mk_dir, exist_ok=True)
 
@@ -51,7 +51,7 @@ class BootprintSchema(BasePlugin):
 
             ## Copy
             #print(f"Copie du CSS {os.path.join(script_path, 'bootprint/bootprint.css')} dans {os.path.join(config['theme'].dirs[0], self.config['css_file_path'], self.config['css_file_name'])}")
-            shutil.copyfile(os.path.join(script_path, 'bootprint/bootprint.css'), os.path.join(config['theme'].dirs[0], self.config['css_file_path'], self.config['css_file_name']))
+            shutil.copyfile(os.path.join(script_path, 'bootprint/bootprint.css'), os.path.join(mk_dir, self.config['css_file_name']))
 
             if not os.path.join(self.config['css_file_path'], self.config['css_file_name']) in config['extra_css']:
                 config['extra_css'].append(os.path.join(self.config['css_file_path'], self.config['css_file_name']))
